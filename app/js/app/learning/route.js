@@ -17,7 +17,7 @@ require
     {
         App.LearningRoute = Ember.Route.extend
         ({
-            setupControllers: function(controller, model)
+            setupController: function(controller, model)
             {
                 this.controllerFor('menu').set('selected', 'learning');
             }

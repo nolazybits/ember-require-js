@@ -22,7 +22,7 @@ require
         App.MenuView = Ember.View.extend
         ({
         //  bind the controller to this view
-            controller          : App.container.lookup('controller:menu'),
+            controller          : App.__container__.lookup('controller:menu'),
         //  bind the view.selected property to the controller.selected property
             selectedBinding     : 'controller.selected',
         //  compile the handlebar template the view will use

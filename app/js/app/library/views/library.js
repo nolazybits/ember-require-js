@@ -7,7 +7,7 @@ require
 (
     [
         'app/app',
-        'text!app/library/templates/main.hbs',
+        'text!app/library/templates/library.hbs',
         'ember'
     ],
     /**
@@ -18,10 +18,11 @@ require
      */
     function( App, template )
     {
+        Ember.TEMPLATES['library'] = Ember.Handlebars.compile( template );
         App.LibraryView = Ember.View.extend
         ({
-            template: Ember.Handlebars.compile( template ),
-            what :'library view'
+            templateName: 'library',
+            what: 'library view'
         });
 
         /*if( !App.LibraryView )

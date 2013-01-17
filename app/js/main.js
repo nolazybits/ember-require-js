@@ -12,7 +12,7 @@ require.config
     {
         'jquery'    : 'lib/jquery-1.8.3',
         'bootstrap' : 'lib/bootstrap.min',
-        'ember'     : 'lib/ember-c87ad9f',
+        'ember'     : 'lib/ember-ea6922f',
         'ember-data': 'lib/ember-data-b5d7c47',
         'handlebars': 'lib/handlebars-1.0.rc.1',
         'text'      : 'lib/require/text'
