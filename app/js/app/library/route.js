@@ -24,15 +24,16 @@ define
 //                parentView.connectOutlet('container',this.container.lookup('view:library'));
 
 //                this.container.lookup('view:application').connectOutlet('container', this.container.lookup('view:library'));
-
+//                  this.render('library');
+//                App.LibraryView.append();
                 this.render
                 (   'library',
                     {
 //                        into: 'container',
-                        outlet: 'container',
+//                        outlet: 'container',
                         controller: this.controller
                     }
-                );
+                )
 
 //                This is what I am aiming for in the future, meaning loading resources only if the user is navigating to those
 /*                require
