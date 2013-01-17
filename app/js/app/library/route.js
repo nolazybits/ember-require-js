@@ -29,8 +29,8 @@ define
                 this.render
                 (   'library',
                     {
-//                        into: 'container',
-//                        outlet: 'container',
+                        into: 'container',
+                        outlet: 'main',
                         controller: this.controller
                     }
                 )

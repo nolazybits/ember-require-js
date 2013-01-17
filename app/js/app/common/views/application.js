@@ -2,9 +2,9 @@ require
 (
     [
         'app/app',
-        'text!app/common/templates/application.hbs',
+//        'text!app/common/templates/application.hbs',
 //  comment the line above and uncomment the line below to pass the menu view to the ApplicationView being a ContainerView
-//        'app/common/views/menu',
+        'app/common/views/menu',
         'ember'
     ],
     /**
@@ -12,7 +12,7 @@ require
      *
      * @param App
      */
-    function( App, template )
+/*    function( App, template )
     {
         Ember.TEMPLATES['application'] = Ember.Handlebars.compile( template );
         App.ApplicationView = Ember.View.extend
@@ -20,9 +20,9 @@ require
             template: 'application',
             what: 'application view'
         })
-    }
+    }*/
 //  Comment above and uncomment here to get the ApplicationView with children
-/*    function (App)
+    function (App)
     {
         App.ApplicationView = Ember.ContainerView.extend
         ({
@@ -38,5 +38,5 @@ require
             }
         });
         return App.ApplicationView;
-    }*/
+    }
 );
