@@ -6,7 +6,6 @@
 
 define
 (
-    'app/store',
     [
         'app/app',
         'ember',
@@ -22,13 +21,12 @@ define
      *
      * @returns Class
      */
-        function(App)
+    function(App)
     {
-        var Store = DS.Store.extend
+        App.Store = DS.Store.extend
         ({
-            revision: 11
+            revision: 11,
+            adapter: 'DS.fixtureAdapter'
         })
-
-        return App.Store = Store;
     }
 )

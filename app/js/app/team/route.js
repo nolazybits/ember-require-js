@@ -19,7 +19,45 @@ require
         ({
             setupController: function(controller, model)
             {
-                this.controllerFor('menu').set('selected', 'team');
+                var self = this;
+                require
+                (
+                    [
+                        'app/team/controllers/team'
+                    ],
+                    function()
+                    {
+                        self.set('controller', self.container.lookup('controller:team') );
+                    }
+                )
+            },
+
+            renderTemplate : function(controller, model)
+            {
+                var self = this;
+                //  select the proper menu item
+                this.controllerFor('application').set('selected', 'team');
+
+                //                This is what I am aiming for in the future, meaning loading resources only if the user is navigating to those
+                require
+                (
+                    [
+                        'app/team/views/team'
+                    ],
+                    function()
+                    {
+                        //  render the view in the outlet
+                        self.render('team');
+                        /*                this.render
+                         (   'library',
+                         {
+                         into: 'application',
+                         outlet: 'main',
+                         controller: this.controller
+                         }
+                         )*/
+                    }
+                )
             }
         })
     }

@@ -6,9 +6,9 @@
 
 define
 (
-    'app/library/models/course',
     [
-        'ember'
+        'ember',
+        'ember-data'
     ],
 
     /**
@@ -17,9 +17,8 @@ define
      */
     function ()
     {
-        return DS.Model.extend
+        App.Course = DS.Model.extend
         ({
-            id: DS.attr('number'),
             title: DS.attr('string'),
             description: DS.attr('string')
         })

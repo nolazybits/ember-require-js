@@ -15,10 +15,10 @@ define
      */
     function(App)
     {
-        App.LibraryController = Ember.ArrayController.extend
+        App.AdminController = Ember.ArrayController.extend
         ({
             content: [],
-            what: "library controller"
+            what: "admin controller"
         });
     }
 )

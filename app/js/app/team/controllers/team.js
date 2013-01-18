@@ -4,7 +4,7 @@
  * Time: 2:21 PM
  */
 
-define
+require
 (
     [
         'app/app',
@@ -18,7 +18,9 @@ define
         App.LibraryController = Ember.ArrayController.extend
         ({
             content: [],
-            what: "library controller"
+            what: "team controller"
         });
+
+//        App.container.register('controller', 'library', controller);
     }
 )

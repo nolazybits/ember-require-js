@@ -2,27 +2,41 @@ require
 (
     [
         'app/app',
-//        'text!app/common/templates/application.hbs',
-//  comment the line above and uncomment the line below to pass the menu view to the ApplicationView being a ContainerView
-        'app/common/views/menu',
+        'text!app/common/templates/application.hbs',
         'ember'
     ],
     /**
      * Main application view
      *
      * @param App
+     * @param template the handlebar template to compite
      */
-/*    function( App, template )
+    function( App, template )
     {
         Ember.TEMPLATES['application'] = Ember.Handlebars.compile( template );
         App.ApplicationView = Ember.View.extend
         ({
-            template: 'application',
-            what: 'application view'
+            templateName: 'application',
+            what: 'application view',
+
+        //  bind the view.selected property to the controller.selected property
+            selectedBinding     : 'controller.selected',
+
+        //  sub view/items for navigation
+            NavItemView         : Ember.View.extend
+            ({
+                tagName             : 'li',
+                classNameBindings   : 'isActive:active'.w(),
+                isActive            : function()
+                {
+                    var controller = this.get('parentView.controller');
+                    return this.get('item') === this.get('parentView.selected');
+                }.property('item', 'parentView.selected').cacheable()
+            })
         })
-    }*/
+    }
 //  Comment above and uncomment here to get the ApplicationView with children
-    function (App)
+/*    function (App)
     {
         App.ApplicationView = Ember.ContainerView.extend
         ({
@@ -38,5 +52,5 @@ require
             }
         });
         return App.ApplicationView;
-    }
+    }*/
 );

@@ -17,10 +17,11 @@ require
     */
     function(App)
     {
-        App.MenuController = Ember.Controller.extend
+        App.ApplicationController = Ember.Controller.extend
         ({
             content     : [],
-            selected    : 'none'
+            selected    : 'none',
+            what: "application controller"
         });
     }
 );

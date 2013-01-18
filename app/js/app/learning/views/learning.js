@@ -7,7 +7,7 @@ define
 (
     [
         'app/app',
-        'text!app/admin/templates/admin.hbs',
+        'text!app/learning/templates/learning.hbs',
         'ember'
     ],
     /**
@@ -18,10 +18,10 @@ define
      */
     function( App, template )
     {
-        Ember.TEMPLATES['admin'] = Ember.Handlebars.compile( template )
-        App.AdminView = Ember.View.extend
+        Ember.TEMPLATES['learning'] = Ember.Handlebars.compile( template );
+        App.LearningView = Ember.View.extend
         ({
-            templateName: 'admin'
+            templateName: 'learning'
         })
     }
 );

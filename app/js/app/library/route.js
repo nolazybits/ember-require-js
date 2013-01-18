@@ -1,59 +1,40 @@
-define
+require
 (
     [
         'app/app',
         'app/library/controllers/library',
         'app/library/views/library',
-        //        'app/library/models/library',
         'ember'
     ],
     function (App)
     {
+/*        App.Course.FIXTURES  =
+        [
+            {'id': 1, 'title':'title 1'},
+            {'id': 2, 'title':'title 2'},
+            {'id': 3, 'title':'title 3'}
+        ];*/
+
         App.LibraryRoute = Ember.Route.extend
         ({
-            setupController: function(controller, model)
+            setupController: function (controller, model)
             {
-                this.set('controller', this.container.lookup('controller:library') );
+//               controller.set('content', App.Course );
+//                this.set('controller', this.controllerFor('library'));
+//                controller.set('content', App.Course.findAll());
             },
 
             renderTemplate : function(controller, model)
             {
-                this.controllerFor('menu').set('selected', 'library');
+            //  select the proper menu item
+                this.controllerFor('application').set('selected', 'library');
 
-//                var parentView = this.router._lookupActiveView('application');
-//                parentView.connectOutlet('container',this.container.lookup('view:library'));
-
-//                this.container.lookup('view:application').connectOutlet('container', this.container.lookup('view:library'));
-//                  this.render('library');
-//                App.LibraryView.append();
-                this.render
-                (   'library',
-                    {
-                        into: 'container',
-                        outlet: 'main',
-                        controller: this.controller
-                    }
-                )
-
-//                This is what I am aiming for in the future, meaning loading resources only if the user is navigating to those
-/*                require
-                 (
-                 [
-                     'app/library/controllers/library',
-                     'app/library/views/main',
-                     'app/library/models/library'
-                 ],
-                 function()
-                 {
-                    // do some stuff here, I guess
-                    this.render
-                    (   'library',
-                        {
-                            into: 'container',
-                            controller: this.controller
-                        }
-                    );
-                 )*/
+            //  render the view in the outlet
+                 this.render('library', {controller: [
+                     {'id': 1, 'title':'title 1'},
+                     {'id': 2, 'title':'title 2'},
+                     {'id': 3, 'title':'title 3'}
+                 ]});
             }
         })
     }

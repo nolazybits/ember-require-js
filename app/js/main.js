@@ -12,8 +12,8 @@ require.config
     {
         'jquery'    : 'lib/jquery-1.8.3',
         'bootstrap' : 'lib/bootstrap.min',
-        'ember'     : 'lib/ember-ea6922f',
-        'ember-data': 'lib/ember-data-b5d7c47',
+        'ember'     : 'lib/ember',
+        'ember-data': 'lib/ember-data',
         'handlebars': 'lib/handlebars-1.0.rc.1',
         'text'      : 'lib/require/text'
     },
@@ -40,32 +40,25 @@ requirejs.onError = function (err)
     throw err;
 };
 
-//  for now require all the JS files (non modular)
-//  We should look into yeoman and grunt tools
+//  Load application, router and routes
 require
 (
     [
-    //  templates
-        'text!app/common/templates/menu.hbs',
-        'text!app/common/templates/container.hbs',
-        'text!app/common/templates/header.hbs',
-
     //  main app
         'app/app',
 
     //  controllers
-        'app/common/controllers/menu',
 
-    //  views
-        'app/admin/views/admin',
-        'app/common/views/menu',
-        'app/common/views/header',
-        'app/common/views/container',
+    // views
 
     //  models
         'app/store',
 
+    //  models
+        'app/library/models/course',
+
     //  routes and router
+        'app/index_route',
         'app/admin/route',
         'app/learning/route',
         'app/library/route',
@@ -74,7 +67,6 @@ require
 
     //  Application View
         'app/common/views/application'
-
     ],
 
     function ()

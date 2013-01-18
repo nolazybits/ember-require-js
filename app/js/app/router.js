@@ -1,3 +1,5 @@
+// Check http://emberjs.com/guides/routing/defining-your-routes/ for last doc
+
 // Check this gist for new Router API
 // https://gist.github.com/3981133
 
@@ -20,12 +22,10 @@ require
         (
             function (match)
             {
-                match('/').to('library');
-                match('/library').to('library');
-
-                match('/admin').to('admin');
-                match('/learning').to('learning');
-                match('/team').to('team');
+                this.route('library');
+                this.route('learning');
+                this.route('team');
+                this.route('admin');
             }
         );
 });

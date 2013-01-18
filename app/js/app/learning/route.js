@@ -1,25 +1,22 @@
-/**
- * User: xmartin
- * Date: 20/12/12
- * Time: 2:06 PM
- */
-
-//  Common Router
-
-require
+define
 (
     [
         'app/app',
+        'app/learning/controllers/learning',
+        'app/learning/views/learning',
         'ember'
     ],
-
-    function(App)
+    function (App)
     {
         App.LearningRoute = Ember.Route.extend
         ({
-            setupController: function(controller, model)
+            renderTemplate : function(controller, model)
             {
-                this.controllerFor('menu').set('selected', 'learning');
+                //  select the proper menu item
+                this.controllerFor('application').set('selected', 'learning');
+
+                //  render the view in the outlet
+                this.render('learning');
             }
         })
     }

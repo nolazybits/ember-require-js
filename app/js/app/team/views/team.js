@@ -5,23 +5,24 @@
  */
 define
 (
-    'app/learning/views/main',
     [
-        'text!app/learning/templates/main.hbs',
+        'app/app',
+        'text!app/team/templates/team.hbs',
         'ember'
     ],
     /**
-     * TODO view description
      *
-     * @returns Class
+     * @param App
      * @param template
+     * @returns Class
      */
-    function( template )
+    function( App, template )
     {
-        return Ember.View.extend
+        Ember.TEMPLATES['team'] = Ember.Handlebars.compile( template );
+        App.TeamView = Ember.View.extend
         ({
             //            testBinding: 'controller.namespace.testController',
-            template: Ember.Handlebars.compile( template )
+            templateName: 'team'
             /*
              classNameBindings: 'buttonClass',
              buttonClass: function () {
